@@ -1,0 +1,23 @@
+key,base,low,high,type,unit,source
+brent,112.3,100.0,120.0,Sourced,$/bbl,"Oilprice.com live futures, 22 Oct 2026 13:50 IST ($112.31)"
+merey_diff,-16.5,-20.4,-12.0,Sourced,$/bbl,"Sep official Merey $93.75 (Oilprice/OPEC) vs EIA Sep Brent $114.16 = −20.4; JV deals −12/−13 (Reuters, 22 Sep); base = midpoint"
+merey_freight,9.0,8.0,10.0,Sourced,$/bbl,"Business Standard, 14 Aug 2026: Americas→India freight ~$8–10/bbl"
+merey_insurance,0.75,0.4,1.5,Estimate,$/bbl,"War-risk, cargo cover, OFAC screening; no public figure"
+urals_dap_diff,0.0,-2.0,8.0,Sourced,$/bbl,"Baird Maritime/Reuters, 15 Oct 2026: Urals DAP India ~parity to Dated Brent; peaked +$8 in Sep"
+crack_lpg,-20.0,-30.0,-10.0,Estimate,$/bbl,No current Asian LPG crack found
+crack_gasoline,23.0,15.0,50.0,Sourced,$/bbl,"Quantum (QCI), 21 Oct 2026: Singapore 92 RON $132.42/b FOB vs Brent ~$109.3 same day"
+crack_jet,68.0,58.0,78.0,Estimate,$/bbl,"Gasoil less ~$2 (QCI: Asian jet E/W at 6-month lows, Oct 2026); level not public"
+crack_diesel,70.0,60.0,78.0,Sourced,$/bbl,"QCI, 21 Oct 2026: Singapore gasoil 10ppm $179.81/b FOB, Nov crack $72.21 vs Dubai; M1 crack $64.75 on 16 Oct"
+crack_fuel_oil,2.0,-10.0,8.0,Sourced,$/bbl,"TradingView, 22 Oct 2026: Singapore 380cst vs Dubai crack ~$3.3 (indicative; volatile)"
+lng_usd_mmbtu,29.55,20.0,35.0,Sourced,$/MMBtu,"Oilprice.com, JKM LNG $29.55 (2-day delay, ~20 Oct 2026); values petcoke gasified to replace LNG"
+sulfur_fob,835.0,600.0,900.0,Sourced,$/t,"Argus, 30 Sep 2026: QatarEnergy Oct sulphur $835/t FOB (Sep $880)"
+sulfur_realisation,0.85,0.7,0.95,Estimate,share,Reliance netback vs Qatar FOB benchmark
+venez_kbd,280.0,200.0,400.0,Estimate,kb/d,Kpler: India Oct arrivals ~350–465 kb/d; Reliance share assumed ~80%
+usd_inr,94.5,93.0,96.0,Sourced,₹/$,"Goodreturns ticker, 21 Oct 2026 (~94.5)"
+merey_api,16.0,15.5,16.5,Sourced,°API,Merey 16 grade spec (Shale24)
+merey_sulfur_pct,2.5,2.4,2.7,Sourced,%,Merey 16 typical assay
+urals_api,31.0,30.0,32.0,Sourced,°API,Urals typical assay
+urals_sulfur_pct,1.7,1.5,1.8,Sourced,%,Urals typical assay
+base_opex,3.0,2.5,3.5,Estimate,$/bbl,Jamnagar cash cost; not disclosed
+opex_per_pct_s,0.6,0.4,1.0,Estimate,$/bbl per %S,Hydrotreating + hydrogen cost; H2 dearer with LNG high
+opex_per_api_below_30,0.1,0.05,0.15,Estimate,$/bbl per °,Coking/resid upgrading penalty
