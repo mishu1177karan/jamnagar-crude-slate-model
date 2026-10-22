@@ -4,7 +4,7 @@ Does heavy, high-sulfur Venezuelan **Merey** make Reliance's Jamnagar refinery m
 
 This notebook answers that with a bottom-up refinery margin model, priced with live market data from **22 October 2026**.
 
-![Margin bridge](charts/1_margin_bridge.png)
+![Margin bridge](1_margin_bridge.png)
 
 ## Key findings (22 Oct 2026 prices)
 
