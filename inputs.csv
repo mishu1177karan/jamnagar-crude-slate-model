@@ -1,17 +1,17 @@
 key,base,low,high,type,unit,source
-brent,112.3,100.0,120.0,Sourced,$/bbl,"Oilprice.com live futures, 22 Oct 2026 13:50 IST ($112.31)"
-merey_diff,-16.5,-20.4,-12.0,Sourced,$/bbl,"Sep official Merey $93.75 (Oilprice/OPEC) vs EIA Sep Brent $114.16 = −20.4; JV deals −12/−13 (Reuters, 22 Sep); base = midpoint"
-merey_freight,9.0,8.0,10.0,Sourced,$/bbl,"Business Standard, 14 Aug 2026: Americas→India freight ~$8–10/bbl"
+brent,112.3,100.0,120.0,Sourced,$/bbl,"Oilprice.com live futures, 22 Oct 2026 13:50 IST (USD 112.31)"
+merey_diff,-16.5,-20.4,-12.0,Sourced,$/bbl,"Sep official Merey USD 93.75 (Oilprice/OPEC) vs EIA Sep Brent USD 114.16 = −20.4; JV deals −12/−13 (Reuters, 22 Sep); base = midpoint"
+merey_freight,9.0,8.0,10.0,Sourced,$/bbl,"Business Standard, 14 Aug 2026: Americas→India freight ~USD 8–10/bbl"
 merey_insurance,0.75,0.4,1.5,Estimate,$/bbl,"War-risk, cargo cover, OFAC screening; no public figure"
-urals_dap_diff,0.0,-2.0,8.0,Sourced,$/bbl,"Baird Maritime/Reuters, 15 Oct 2026: Urals DAP India ~parity to Dated Brent; peaked +$8 in Sep"
+urals_dap_diff,0.0,-2.0,8.0,Sourced,$/bbl,"Baird Maritime/Reuters, 15 Oct 2026: Urals DAP India ~parity to Dated Brent; peaked +USD 8 in Sep"
 crack_lpg,-20.0,-30.0,-10.0,Estimate,$/bbl,No current Asian LPG crack found
 crack_naphtha,-5.0,-15.0,5.0,Estimate,$/bbl,Asian naphtha crack not public; set slightly below Brent
-crack_gasoline,23.0,15.0,50.0,Sourced,$/bbl,"Quantum (QCI), 21 Oct 2026: Singapore 92 RON $132.42/b FOB vs Brent ~$109.3"
-crack_jet,68.0,58.0,78.0,Estimate,$/bbl,Gasoil less ~$2 (QCI: Asian jet E/W at 6-month lows); level not public
-crack_diesel,70.0,60.0,78.0,Sourced,$/bbl,"QCI, 21 Oct 2026: Singapore gasoil 10ppm $179.81/b, Nov crack $72.21 vs Dubai; M1 $64.75 on 16 Oct"
-crack_fuel_oil,2.0,-10.0,8.0,Sourced,$/bbl,"TradingView, 22 Oct 2026: Singapore 380cst vs Dubai ~$3.3 (indicative)"
-lng_usd_mmbtu,29.55,20.0,35.0,Sourced,$/MMBtu,Oilprice.com JKM $29.55 (~20 Oct 2026); prices hydrogen and gasified petcoke
-sulfur_fob,835.0,600.0,900.0,Sourced,$/t,"Argus, 30 Sep 2026: QatarEnergy Oct sulphur $835/t FOB"
+crack_gasoline,23.0,15.0,50.0,Sourced,$/bbl,"Quantum (QCI), 21 Oct 2026: Singapore 92 RON USD 132.42/b FOB vs Brent ~USD 109.3"
+crack_jet,68.0,58.0,78.0,Estimate,$/bbl,Gasoil less ~USD 2 (QCI: Asian jet E/W at 6-month lows); level not public
+crack_diesel,70.0,60.0,78.0,Sourced,$/bbl,"QCI, 21 Oct 2026: Singapore gasoil 10ppm USD 179.81/b, Nov crack USD 72.21 vs Dubai; M1 USD 64.75 on 16 Oct"
+crack_fuel_oil,2.0,-10.0,8.0,Sourced,$/bbl,"TradingView, 22 Oct 2026: Singapore 380cst vs Dubai ~USD 3.3 (indicative)"
+lng_usd_mmbtu,29.55,20.0,35.0,Sourced,$/MMBtu,Oilprice.com JKM USD 29.55 (~20 Oct 2026); prices hydrogen and gasified petcoke
+sulfur_fob,835.0,600.0,900.0,Sourced,$/t,"Argus, 30 Sep 2026: QatarEnergy Oct sulphur USD 835/t FOB"
 sulfur_realisation,0.85,0.7,0.95,Estimate,share,Reliance netback vs Qatar FOB benchmark
 venez_kbd,280.0,200.0,350.0,Estimate,kb/d,Kpler: India Oct arrivals ~350–465 kb/d; Reliance share ~80% (and the volume run through this train)
 capacity_scale,1.0,0.9,1.3,Estimate,×,Secondary units scaled from the SEZ refinery; Jamnagar DTA may add coking/vacuum headroom

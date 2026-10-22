@@ -7796,7 +7796,7 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=35a30fbc">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7d66bbdb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7811,7 +7811,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=6a67ac96">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=38f01760">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7837,7 +7837,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b8892bd7">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a336b629">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7847,7 +7847,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=dad75e51">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e99c13a4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7876,6 +7876,7 @@ a.anchor-link {
  <span class="p">(</span><span class="s2">"capacity_scale"</span><span class="p">,</span>       <span class="mf">1.0</span><span class="p">,</span>    <span class="mf">0.9</span><span class="p">,</span>    <span class="mf">1.3</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="s2">"×"</span><span class="p">,</span>       <span class="s2">"Secondary units scaled from the SEZ refinery; Jamnagar DTA may add coking/vacuum headroom"</span><span class="p">),</span>
  <span class="p">(</span><span class="s2">"usd_inr"</span><span class="p">,</span>             <span class="mf">94.5</span><span class="p">,</span>   <span class="mf">93.0</span><span class="p">,</span>   <span class="mf">96.0</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="s2">"₹/$"</span><span class="p">,</span>     <span class="s2">"Goodreturns ticker, 21 Oct 2026 (~94.5)"</span><span class="p">),</span>
 <span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"key"</span><span class="p">,</span> <span class="s2">"base"</span><span class="p">,</span> <span class="s2">"low"</span><span class="p">,</span> <span class="s2">"high"</span><span class="p">,</span> <span class="s2">"type"</span><span class="p">,</span> <span class="s2">"unit"</span><span class="p">,</span> <span class="s2">"source"</span><span class="p">])</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"key"</span><span class="p">)</span>
+<span class="n">INPUTS</span><span class="p">[</span><span class="s2">"source"</span><span class="p">]</span> <span class="o">=</span> <span class="n">INPUTS</span><span class="p">[</span><span class="s2">"source"</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"$"</span><span class="p">,</span> <span class="s2">"USD "</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>   <span class="c1"># '$…$' pairs would render as maths in HTML</span>
 <span class="n">INPUTS</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"inputs.csv"</span><span class="p">)</span>
 <span class="n">BASE</span> <span class="o">=</span> <span class="n">INPUTS</span><span class="p">[</span><span class="s2">"base"</span><span class="p">]</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
 <span class="n">display</span><span class="p">(</span><span class="n">INPUTS</span><span class="p">[[</span><span class="s2">"base"</span><span class="p">,</span> <span class="s2">"low"</span><span class="p">,</span> <span class="s2">"high"</span><span class="p">,</span> <span class="s2">"type"</span><span class="p">,</span> <span class="s2">"unit"</span><span class="p">,</span> <span class="s2">"source"</span><span class="p">]])</span>
@@ -7934,7 +7935,7 @@ a.anchor-link {
 <td>120.00</td>
 <td>Sourced</td>
 <td>$/bbl</td>
-<td>Oilprice.com live futures, 22 Oct 2026 13:50 IST ($112.31)</td>
+<td>Oilprice.com live futures, 22 Oct 2026 13:50 IST (USD 112.31)</td>
 </tr>
 <tr>
 <th>merey_diff</th>
@@ -7943,7 +7944,7 @@ a.anchor-link {
 <td>-12.00</td>
 <td>Sourced</td>
 <td>$/bbl</td>
-<td>Sep official Merey $93.75 (Oilprice/OPEC) vs EIA Sep Brent $114.16 = −20.4; ...</td>
+<td>Sep official Merey USD 93.75 (Oilprice/OPEC) vs EIA Sep Brent USD 114.16 = −...</td>
 </tr>
 <tr>
 <th>merey_freight</th>
@@ -7952,7 +7953,7 @@ a.anchor-link {
 <td>10.00</td>
 <td>Sourced</td>
 <td>$/bbl</td>
-<td>Business Standard, 14 Aug 2026: Americas→India freight ~$8–10/bbl</td>
+<td>Business Standard, 14 Aug 2026: Americas→India freight ~USD 8–10/bbl</td>
 </tr>
 <tr>
 <th>merey_insurance</th>
@@ -7997,7 +7998,7 @@ a.anchor-link {
 <td>50.00</td>
 <td>Sourced</td>
 <td>$/bbl</td>
-<td>Quantum (QCI), 21 Oct 2026: Singapore 92 RON $132.42/b FOB vs Brent ~$109.3</td>
+<td>Quantum (QCI), 21 Oct 2026: Singapore 92 RON USD 132.42/b FOB vs Brent ~USD ...</td>
 </tr>
 <tr>
 <th>crack_jet</th>
@@ -8006,7 +8007,7 @@ a.anchor-link {
 <td>78.00</td>
 <td>Estimate</td>
 <td>$/bbl</td>
-<td>Gasoil less ~$2 (QCI: Asian jet E/W at 6-month lows); level not public</td>
+<td>Gasoil less ~USD 2 (QCI: Asian jet E/W at 6-month lows); level not public</td>
 </tr>
 <tr>
 <th>crack_diesel</th>
@@ -8015,7 +8016,7 @@ a.anchor-link {
 <td>78.00</td>
 <td>Sourced</td>
 <td>$/bbl</td>
-<td>QCI, 21 Oct 2026: Singapore gasoil 10ppm $179.81/b, Nov crack $72.21 vs Duba...</td>
+<td>QCI, 21 Oct 2026: Singapore gasoil 10ppm USD 179.81/b, Nov crack USD 72.21 v...</td>
 </tr>
 <tr>
 <th>crack_fuel_oil</th>
@@ -8024,7 +8025,7 @@ a.anchor-link {
 <td>8.00</td>
 <td>Sourced</td>
 <td>$/bbl</td>
-<td>TradingView, 22 Oct 2026: Singapore 380cst vs Dubai ~$3.3 (indicative)</td>
+<td>TradingView, 22 Oct 2026: Singapore 380cst vs Dubai ~USD 3.3 (indicative)</td>
 </tr>
 <tr>
 <th>lng_usd_mmbtu</th>
@@ -8033,7 +8034,7 @@ a.anchor-link {
 <td>35.00</td>
 <td>Sourced</td>
 <td>$/MMBtu</td>
-<td>Oilprice.com JKM $29.55 (~20 Oct 2026); prices hydrogen and gasified petcoke</td>
+<td>Oilprice.com JKM USD 29.55 (~20 Oct 2026); prices hydrogen and gasified petcoke</td>
 </tr>
 <tr>
 <th>sulfur_fob</th>
@@ -8042,7 +8043,7 @@ a.anchor-link {
 <td>900.00</td>
 <td>Sourced</td>
 <td>$/t</td>
-<td>Argus, 30 Sep 2026: QatarEnergy Oct sulphur $835/t FOB</td>
+<td>Argus, 30 Sep 2026: QatarEnergy Oct sulphur USD 835/t FOB</td>
 </tr>
 <tr>
 <th>sulfur_realisation</th>
@@ -8088,7 +8089,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4ce61b1d">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=554f99a3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8098,7 +8099,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3a7a4cb6">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=900d33f1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8242,7 +8243,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6c8cbcab">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f2107dd4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8252,7 +8253,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a37ba770">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=89f0a8fd">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8340,7 +8341,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=29477e67">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b69f9440">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8360,7 +8361,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=af8268ee">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=bbaad4ff">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8404,7 +8405,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=617a307c">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5f57292e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8414,7 +8415,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=837cd3b5">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7d709036">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8629,7 +8630,7 @@ Merey advantage: +0.73 $/bbl  →  +75 $ mn/yr (≈ ₹+706 crore) at 280 kb/d
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a0ecec86">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=80ee0343">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8639,7 +8640,7 @@ Merey advantage: +0.73 $/bbl  →  +75 $ mn/yr (≈ ₹+706 crore) at 280 kb/d
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9e62e5c1">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0c126abc">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8762,7 +8763,7 @@ Merey advantage: +0.73 $/bbl  →  +75 $ mn/yr (≈ ₹+706 crore) at 280 kb/d
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3b7e5b1d">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2f15434f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8772,7 +8773,7 @@ Merey advantage: +0.73 $/bbl  →  +75 $ mn/yr (≈ ₹+706 crore) at 280 kb/d
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c70d8223">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9d1a6f5c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8815,7 +8816,7 @@ Merey advantage: +0.73 $/bbl  →  +75 $ mn/yr (≈ ₹+706 crore) at 280 kb/d
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=42b779d5">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=15f2c0dc">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8825,7 +8826,7 @@ Merey advantage: +0.73 $/bbl  →  +75 $ mn/yr (≈ ₹+706 crore) at 280 kb/d
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=eeb57275">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=366d44ee">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8884,7 +8885,7 @@ Merey advantage: +0.73 $/bbl  →  +75 $ mn/yr (≈ ₹+706 crore) at 280 kb/d
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=44a1249c">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=14d0e045">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8894,7 +8895,7 @@ Merey advantage: +0.73 $/bbl  →  +75 $ mn/yr (≈ ₹+706 crore) at 280 kb/d
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=34da027d">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=078b65b6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8988,7 +8989,7 @@ Reference points: official Sep Merey −20.4 · PDVSA–JV deals −12 to −13 
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5fc03a1b">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f64ad71d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8998,7 +8999,7 @@ Reference points: official Sep Merey −20.4 · PDVSA–JV deals −12 to −13 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=cb8c7ce0">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=44dd7ffd">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9155,7 +9156,7 @@ Reference points: official Sep Merey −20.4 · PDVSA–JV deals −12 to −13 
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=66f086bd">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2c5a05e3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9165,7 +9166,7 @@ Reference points: official Sep Merey −20.4 · PDVSA–JV deals −12 to −13 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=744387aa">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0f94b8a2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9207,7 +9208,7 @@ Reference points: official Sep Merey −20.4 · PDVSA–JV deals −12 to −13 
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bee8f15d">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d03b9a74">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9217,7 +9218,7 @@ Reference points: official Sep Merey −20.4 · PDVSA–JV deals −12 to −13 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5f2897c0">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d916fb67">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9252,7 +9253,7 @@ Reference points: official Sep Merey −20.4 · PDVSA–JV deals −12 to −13 
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=205f2455">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cb0dff79">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9262,7 +9263,7 @@ Reference points: official Sep Merey −20.4 · PDVSA–JV deals −12 to −13 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=59c8e62d">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e8cde83e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9363,7 +9364,7 @@ Reference points: official Sep Merey −20.4 · PDVSA–JV deals −12 to −13 
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=31a7b4dd">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3f8d73d5">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9373,7 +9374,7 @@ Reference points: official Sep Merey −20.4 · PDVSA–JV deals −12 to −13 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a9850301">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2001158e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9424,7 +9425,7 @@ Monte Carlo: Merey wins in 80% of 3,000 runs. At September's Urals premium, Mere
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bb45db75">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4b252739">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
