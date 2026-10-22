@@ -1,49 +1,45 @@
 # Jamnagar Crude Slate Model: Venezuelan Merey vs Russian Urals
 
-Does heavy, high-sulfur Venezuelan **Merey** make Reliance's Jamnagar refinery more money per barrel than Russian **Urals**? And what discount does Merey need to be worth running?
+Does heavy, high-sulfur Venezuelan **Merey** make Reliance's Jamnagar refinery more money per barrel than Russian **Urals**? How much Merey can the refinery absorb before the advantage disappears?
 
-This notebook answers that with a bottom-up refinery margin model, priced with live market data from **22 October 2026**.
+This project answers that with an **assay-based refinery linear program (LP)**, priced with live market data from **22 October 2026**.
 
-![Margin bridge](1_margin_bridge.png)
+**[View the full report](https://mishu1177karan.github.io/jamnagar-crude-slate-model/)**
+
+![Merey value vs volume](4_merey_volume_curve.png)
 
 ## Key findings (22 Oct 2026 prices)
 
 | Metric | Result |
 |---|---|
-| Merey advantage over Urals | **+$2.00/bbl** (~$205M a year at 280 kb/d) |
-| Break-even Merey discount | **Brent −$14.50/bbl** |
-| Probability Merey wins (10,000-run Monte Carlo) | **87%** |
-| Merey advantage at September pricing (Urals at +$8) | **+$10.00/bbl** |
-| Value of Merey's extra sulfur ($835/t) | +$1.00/bbl |
-| Freight at which the advantage disappears | ~$12/bbl |
+| Merey advantage at 280 kb/d | **+$0.73/bbl** (~$75M a year) |
+| Merey advantage on the first ~180 kb/d | **+$2.24/bbl** |
+| Volume where the vacuum unit fills | **~200 kb/d** of Merey in a 580 kb/d train |
+| Break-even Merey discount at 280 kb/d | **Brent −$15.8/bbl** |
+| Probability Merey wins (3,000-run Monte Carlo) | **80%** |
+| Merey advantage at September pricing (Urals at +$8) | **+$8.73/bbl** |
 
+- **Capacity is the binding constraint.** Merey is ~42% vacuum residue, against ~19% for Urals. Once the vacuum unit is full, surplus residue is sold as low-value fuel oil, and each extra barrel of Merey loses money.
+- **Petcoke is the hidden driver.** With Asian LNG near $30/MMBtu, gasified petcoke replaces expensive LNG, worth about +$7/bbl of Merey. If LNG falls to $15, the advantage turns negative.
 - **Timing explains October's import surge.** October cargoes were priced in September, when Urals traded at a premium of about $8.
-- **Petcoke is a hidden driver.** With Asian LNG near $30/MMBtu, Merey's extra petcoke is valuable as gasifier feed that replaces imported LNG.
-- **Two sourced prices drive the answer:** the Urals delivered premium and the Merey discount. The estimated inputs move the result only between +$0.25 and +$3.14/bbl.
+
+![Margin bridge](3_margin_bridge.png)
 
 ## Method
 
-```
-Net margin = Product slate value − Delivered crude cost − Processing cost + Sulfur credit
-```
-
-1. Per-barrel margin for each crude: yield-weighted product value, delivered cost (FOB differential + freight + insurance), processing cost scaled by sulfur and API gravity, and a sulfur byproduct credit.
-2. A margin bridge from Urals to Merey.
-3. An implied break-even discount, solved with a root-finder.
-4. Low, base and high cases for every estimated input, plus named stress scenarios.
-5. A tornado sensitivity across each input's range.
-6. A heatmap of the Merey discount against freight.
-7. A 10,000-run Monte Carlo with triangular (low, base, high) distributions.
+1. **Crude assays** split each crude into cuts: LPG, naphtha, kerosene, diesel, vacuum gasoil (VGO) and vacuum residue, each with its own sulfur content.
+2. **Refinery LP** (`refinery_lp.py`, PuLP) routes every cut through Jamnagar-style units to maximise margin: vacuum unit, delayed coker, FCC, hydrocracker, reformer and product hydrotreaters, each within its capacity. It solves for product yields, petcoke, sulfur recovered, unit loadings, opex and hydrogen use (priced off LNG).
+3. **Merey advantage:** the margin of a 580 kb/d all-Urals train compared with the same train when part of the Urals is swapped for Merey.
+4. A volume curve (average and marginal value), a break-even discount, named scenarios, a tornado, a discount × freight heatmap, and a Monte Carlo that re-solves the LP for every draw.
 
 ## Data
 
-Every input is listed in [`inputs.csv`](inputs.csv) with its base, low and high values, and is tagged **Sourced** (published market figure, with source and date) or **Estimate** (not publicly available).
+- **Merey assay:** Oil & Gas Journal, *Guide to World Crudes* (1997).
+- **Urals assay:** bulk yields from public spec sheets. The residue split and cut sulfur are estimates.
+- **Unit capacities:** Jamnagar SEZ refinery (A Barrel Full).
+- **Prices:** Oilprice.com, EIA, Quantum Commodity Intelligence, Argus Media, Reuters (via Rio Times and Baird Maritime), Business Standard and Kpler (via Business Today).
 
-**Sourced (16):** Brent, Merey differential, freight, Urals delivered differential, gasoline, diesel and fuel oil cracks, JKM LNG, sulfur price, crude assays, USD/INR.
-
-**Estimated (6) and yield vectors:** Jamnagar's yields and unit processing costs aren't public, so these are my estimates, each with a low/high range.
-
-Main sources: Oilprice.com, EIA, Quantum Commodity Intelligence, Reuters (via Rio Times and Baird Maritime), Business Standard, Argus Media, and Kpler (via Business Today). The full list is at the end of the notebook.
+Every market input is listed in [`inputs.csv`](inputs.csv) with its base, low and high values, and tagged **Sourced** or **Estimate**.
 
 ## Run it
 
@@ -52,14 +48,15 @@ pip install -r requirements.txt
 jupyter notebook jamnagar_merey_vs_urals.ipynb
 ```
 
-To update the model, edit the input table in Section 1 of the notebook and re-run. A rendered copy, [`jamnagar_merey_vs_urals.html`](jamnagar_merey_vs_urals.html), can be opened without Python.
+To update the model, edit the input table in Section 1 and re-run. The unit yields, costs and assays are in `refinery_lp.py`. A rendered copy with code, [`jamnagar_merey_vs_urals.html`](jamnagar_merey_vs_urals.html), opens without Python.
 
 ## Limitations
 
-- Yields and processing costs are estimates. A crude-assay-based linear program (e.g. AMPL or PuLP) would make them more realistic.
-- Jet and LPG cracks are approximations, because exact Asian values are behind paywalls.
-- Prices are a snapshot from 22 Oct 2026, and refining margins move daily.
-- Reliance's actual PDVSA contract price isn't disclosed. The break-even analysis infers a floor for it.
+- The Merey assay is from 1997 (14.7° API); today's Merey 16 is slightly lighter.
+- The capacities are only the SEZ refinery's, so the domestic (DTA) refinery's extra coking and vacuum capacity isn't modelled. A +30% headroom scenario covers it.
+- Unit yields and costs are textbook values, not Reliance's.
+- Jet, LPG and naphtha cracks are estimates, and prices are a one-day snapshot.
+- The model isn't yet checked against Reliance's reported gross refining margin (GRM).
 
 ## Author
 
